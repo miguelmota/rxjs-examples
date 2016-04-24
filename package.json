@@ -1,0 +1,16 @@
+{
+  "name": "rxjs-examples",
+  "version": "0.0.1",
+  "description": "[]",
+  "main": "index.js",
+  "dependencies": {
+    "rx": "^4.1.0",
+    "rx-dom": "^7.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Miguel Mota <hello@miguelmota.com> (http://www.miguelmota.com/)",
+  "license": "MIT"
+}
