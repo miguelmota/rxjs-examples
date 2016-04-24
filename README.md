@@ -6,7 +6,7 @@ From blog post [Getting Started with RxJS](https://miguelmota.com/blog/getting-s
 
 # Running examples
 
-Install rx
+Install dependencies:
 
 ```bash
 $ npm install
