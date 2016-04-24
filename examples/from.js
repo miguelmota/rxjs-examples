@@ -2,9 +2,9 @@
 
 const Rx = require('rx');
 
-Rx.Observable.range(0, 3)
-.map(x => Rx.Observable.range(x, 3))
-.concatAll()
+const set = new Set([1, 2, 3])
+Rx.Observable.from(set)
+.map(x => x * 2)
 .subscribe(x => console.log(x),
            error => console.error(error),
            () => console.log('done'));

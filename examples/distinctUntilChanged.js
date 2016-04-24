@@ -2,9 +2,8 @@
 
 const Rx = require('rx');
 
-Rx.Observable.range(0, 3)
-.map(x => Rx.Observable.range(x, 3))
-.concatAll()
+Rx.Observable.fromArray([1,2,2,3,2,4])
+.distinctUntilChanged()
 .subscribe(x => console.log(x),
            error => console.error(error),
            () => console.log('done'));

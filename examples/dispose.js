@@ -7,6 +7,6 @@ const subscriptionA = counter.subscribe(i => console.log(`A ${i}`));
 const subscriptionB = counter.subscribe(i => console.log(`B ${i}`));
 
 setTimeout(() => {
-  console.log('Canceling subscriptionB');
+  console.log(`Cancelling subscriptionB`);
   subscriptionB.dispose();
 }, 500);

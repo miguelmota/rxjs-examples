@@ -2,9 +2,7 @@
 
 const Rx = require('rx');
 
-const promise = new Promise((resolve, reject) => {
-  window.setTimeout(resolve, 2000);
-});
+const promise = new Promise((resolve, reject) => window.setTimeout(resolve, 2000));
 
 promise.then(() => console.log('Potential side effect'));
 
