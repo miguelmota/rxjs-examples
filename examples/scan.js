@@ -10,4 +10,7 @@ Rx.Observable.interval(500)
   }
 }, {sum: 0, count: 0})
 .map(o => o.sum / o.count)
-.subscribe(x => console.log(x));
+.take(10)
+.subscribe(x => console.log(x),
+           error => console.error(error),
+           () => console.log('done'));

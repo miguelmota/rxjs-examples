@@ -9,6 +9,4 @@ const source = Rx.DOM.ajax({
 
 source.subscribe(response => console.log(response),
                  error => console.error(error),
-                  () => console.log('done'));
-
-
+                 () => console.log('done'));

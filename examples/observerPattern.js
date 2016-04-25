@@ -19,7 +19,6 @@ class Producer {
   }
 }
 
-
 const notifier = new Producer();
 const listener = (message) => console.log(`Listener received message: ${message}`);
 
