@@ -1,6 +1,6 @@
 'use strict';
 
-const Rx = require('rx');
+const Rx = require('rxjs/Rx.KitchenSink');
 
 Rx.Observable.interval(100)
 .timestamp()

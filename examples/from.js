@@ -1,6 +1,6 @@
 'use strict';
 
-const Rx = require('rx');
+const Rx = require('rxjs/Rx');
 
 const set = new Set([1, 2, 3])
 Rx.Observable.from(set)

@@ -1,18 +1,18 @@
 'use strict';
 
-const Rx = require('rx');
+const Rx = require('rxjs/Rx');
 
 const source = Rx.Observable.create(observer => {
-  observer.onNext(`Hello`);
-  observer.onNext(`World`);
-  observer.onCompleted();
+  observer.next(`Hello`);
+  observer.next(`World`);
+  observer.complete();
 
-  return Rx.Disposable.create(() => console.log('disposed'));
+  return () => console.log(`disposed`);
 });
 
 const subscription = source.subscribe(
                         x => console.log(x),
                         error => console.error(error),
-                        () => console.log('done'));
+                        () => console.log(`done`));
 
-subscription.dispose();
+subscription.unsubscribe();

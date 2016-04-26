@@ -1,6 +1,6 @@
 'use strict';
 
-const Rx = require('rx');
+const Rx = require('rxjs/Rx');
 
 const mouseMoves = Rx.Observable.fromEvent(document, `mousemove`)
 

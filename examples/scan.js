@@ -1,6 +1,6 @@
 'use strict';
 
-const Rx = require('rx');
+const Rx = require('rxjs/Rx');
 
 Rx.Observable.interval(500)
 .scan((previous, current) => {

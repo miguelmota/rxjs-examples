@@ -1,6 +1,6 @@
 'use strict';
 
-const Rx = require('rx');
+const Rx = require('rxjs/Rx');
 
 const sourceA = Rx.Observable.interval(100)
 .map(x => `First: ${x}`)

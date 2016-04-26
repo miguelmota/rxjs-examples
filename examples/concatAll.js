@@ -1,6 +1,6 @@
 'use strict';
 
-const Rx = require('rx');
+const Rx = require('rxjs/Rx');
 
 Rx.Observable.range(0, 3)
 .map(x => Rx.Observable.range(x, 3))

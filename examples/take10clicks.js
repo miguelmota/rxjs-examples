@@ -1,6 +1,6 @@
 'use strict';
 
-const Rx = require('rx');
+const Rx = require('rxjs/Rx');
 
 Rx.Observable.fromEvent(document, 'click')
 .filter(event => event.clientX > window.innerWidth / 2)

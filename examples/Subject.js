@@ -1,6 +1,6 @@
 'use strict';
 
-const Rx = require('rx');
+const Rx = require('rxjs/Rx');
 
 const subject = new Rx.Subject();
 
@@ -8,9 +8,6 @@ subject.subscribe(x => console.log(x),
                   error => console.error(error),
                   () => console.log('done'))
 
-console.log(subject.hasObservers());
-subject.onNext('a');
-subject.onNext('b');
-subject.onNext('c');
-subject.onCompleted();
-console.log(subject.hasObservers());
+subject.next('a');
+subject.next('b');
+subject.complete();

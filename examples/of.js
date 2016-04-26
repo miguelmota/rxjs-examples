@@ -1,8 +1,8 @@
 'use strict';
 
-const Rx = require('rx');
+const Rx = require('rxjs/Rx');
 
-Rx.Observable.just(`Hello World`)
+Rx.Observable.of('foo')
 .subscribe(x => console.log(x),
            error => console.error(error),
            () => console.log('done'));

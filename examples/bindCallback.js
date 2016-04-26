@@ -1,9 +1,9 @@
 'use strict';
 
-const Rx = require('rx');
+const Rx = require('rxjs/Rx');
 
 const hello = (message, callback) => callback(`Hello ${message}`);
-const sayHello = Rx.Observable.fromCallback(hello);
+const sayHello = Rx.Observable.bindCallback(hello);
 const source = sayHello(`World`);
 
 source.subscribe(result => console.log(result),

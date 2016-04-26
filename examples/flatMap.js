@@ -1,6 +1,6 @@
 'use strict';
 
-const Rx = require('rx');
+const Rx = require('rxjs/Rx');
 
 Rx.Observable.interval(100).take(10)
 .flatMap(x => Promise.resolve(x))

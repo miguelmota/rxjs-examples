@@ -1,7 +1,7 @@
 'use strict';
 
-const Rx = require('rx');
-require('rx-dom');
+const Rx = require('rxjs/Rx');
+const RxDOM = require('rxjs/Rx.DOM');
 
 const getData = (url) => {
   let subject;
@@ -10,11 +10,17 @@ const getData = (url) => {
     if (!subject) {
       subject = new Rx.AsyncSubject();
 
-      Rx.DOM.get(url)
+      RxDOM.Observable.ajax({
+        url,
+        responseType: 'text/html'
+      })
       .subscribe(subject);
 
       return subject
-      .map(xhr => xhr.response)
+      .map((xhr, b, c) => {
+        console.log(xhr, b,c)
+          return xhr.response
+    })
       .subscribe(observer);
     }
 

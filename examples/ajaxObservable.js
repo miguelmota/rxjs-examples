@@ -1,6 +1,6 @@
 'use strict';
 
-const Rx = require('rx');
+const Rx = require('rxjs/Rx');
 
 function get(url) {
   return Rx.Observable.create(observer => {
@@ -8,15 +8,15 @@ function get(url) {
     req.open('GET', url);
     req.onload = () => {
       if (req.status === 200) {
-        observer.onNext(req.response);
-        observer.onCompleted();
+        observer.next(req.response);
+        observer.complete();
       } else {
-        observer.onError(new Error(req.statusText));
+        observer.error(new Error(req.statusText));
       }
     }
 
     req.onerror = () => {
-      observer.onError(new Error('An error occured'));
+      observer.error(new Error('An error occured'));
     };
 
     req.send();

@@ -1,6 +1,6 @@
 'use strict';
 
-const Rx = require('rx');
+const Rx = require('rxjs/Rx');
 
 const promise = new Promise((resolve, reject) => window.setTimeout(resolve, 2000));
 
@@ -11,4 +11,4 @@ const subscription = Rx.Observable.fromPromise(promise)
            error => console.error(error),
            () => console.log('done'));
 
-subscription.dispose();
+subscription.unsubscribe();

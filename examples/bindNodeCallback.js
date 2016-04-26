@@ -1,9 +1,9 @@
 'use strict';
 
-const Rx = require('rx');
+const Rx = require('rxjs/Rx');
 const fs = require('fs');
 
-const readdir = Rx.Observable.fromNodeCallback(fs.readdir);
+const readdir = Rx.Observable.bindNodeCallback(fs.readdir);
 const source = readdir('./');
 
 source.subscribe(result => console.log(result),

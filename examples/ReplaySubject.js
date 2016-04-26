@@ -1,30 +1,30 @@
 'use strict';
 
-const Rx = require('rx');
+const Rx = require('rxjs/Rx');
 
 const subjectA = new Rx.Subject();
 
-subjectA.onNext(-2);
-subjectA.onNext(-1);
-subjectA.onNext(1);
+subjectA.next(-2);
+subjectA.next(-1);
+subjectA.next(0);
 subjectA.subscribe(x => console.log(x),
                   error => console.error(error),
                   () => console.log('Subject done'))
 
-subjectA.onNext(2);
-subjectA.onNext(3);
-subjectA.onCompleted();
+subjectA.next(1);
+subjectA.next(2);
+subjectA.complete();
 
 const subjectB = new Rx.ReplaySubject(2);
 
-subjectB.onNext(-2);
-subjectB.onNext(-1);
-subjectB.onNext(1);
+subjectB.next(-2);
+subjectB.next(-1);
+subjectB.next(0);
 
 subjectB.subscribe(x => console.log(x),
                   error => console.error(error),
                   () => console.log('ReplaySubject Done'))
 
-subjectB.onNext(2);
-subjectB.onNext(3);
-subjectB.onCompleted();
+subjectB.next(1);
+subjectB.next(2);
+subjectB.complete();

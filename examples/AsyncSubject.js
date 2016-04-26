@@ -1,6 +1,6 @@
 'use strict';
 
-const Rx = require('rx');
+const Rx = require('rxjs/Rx');
 
 const delayedRange = Rx.Observable.range(0, 5).delay(100);
 const subject = new Rx.AsyncSubject();

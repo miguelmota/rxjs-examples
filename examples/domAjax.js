@@ -1,12 +1,13 @@
 'use strict';
 
-const Rx = require('rx');
-require('rx-dom');
+const Rx = require('rxjs/Rx.KitchenSink');
+const RxDOM = require('rxjs/Rx.DOM');
 
-const source = Rx.DOM.ajax({
-  url: window.location.href
+const source = Rx.Observable.ajax({
+  url: window.location.href,
+  responseType: 'text/html'
 });
 
-source.subscribe(response => console.log(response),
+source.subscribe(xhr => console.log(xhr),
                  error => console.error(error),
                  () => console.log('done'));
