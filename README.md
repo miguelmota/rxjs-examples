@@ -2,6 +2,8 @@
 
 > Examples of using [RxJS](https://github.com/Reactive-Extensions/RxJS).
 
+Tested with RxJS v5.0.
+
 From blog post [Getting Started with RxJS](https://miguelmota.com/blog/getting-started-with-rxjs).
 
 # Running examples

@@ -4,8 +4,7 @@
   "description": "[]",
   "main": "index.js",
   "dependencies": {
-    "rx": "^4.1.0",
-    "rx-dom": "^7.0.3"
+    "rxjs": "^5.0.0-beta.6"
   },
   "devDependencies": {},
   "scripts": {
