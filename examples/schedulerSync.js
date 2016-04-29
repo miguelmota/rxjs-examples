@@ -13,6 +13,6 @@ const source = Rx.Observable.from(array);
 
 console.log(`before subscribe`);
 source.subscribe(x => console.log(x),
-           error => console.error(error),
-           () => console.log(`Total time: ${Date.now() - timeStart}ms`));
+                 error => console.error(error),
+                 () => console.log(`Total time: ${Date.now() - timeStart}ms`));
 console.log(`after subscribe`);
