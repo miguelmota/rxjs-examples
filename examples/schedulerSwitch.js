@@ -19,7 +19,9 @@ const source = Rx.Observable.from(array)
 .map(groupedObservable => expensiveOperation(groupedObservable))
 
 console.log(`before subscribe`);
-source.subscribe(obs => obs.count().subscribe(x => console.log(x)),
-error => console.error(error),
-() => console.log(`done`));
+source.subscribe(
+  obs => obs.count().subscribe(x => console.log(x)),
+  error => console.error(error),
+  () => console.log(`done`)
+);
 console.log(`after subscribe`);
